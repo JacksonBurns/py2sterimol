@@ -26,7 +26,7 @@ cwd = pathlib.Path(__file__).parent
 README = (cwd / "README.md").read_text()
 
 setup(
-    name="test pypi_name",
+    name="py2sterimol",
     version=get_version("py2sterimol/__init__.py"),
     description="Thin client Python interface to the original Fortran implementation of Sterimol parameters.",
     long_description=README,
