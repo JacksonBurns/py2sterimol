@@ -22,5 +22,19 @@ There are two issues which arise that probably make basically no difference to 9
 
 Above all else, it's cool so why not?
 
+## Relevant Links
+ - A like minded individual providing [the original code](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) as a matter of completionism.
+ - Jackson and Paton's [sterimol](https://github.com/ipendlet/Sterimol), the first attempt at implementing sterimol in Python which conveniently includes some input files from which to infer the usage rules.
+
+## License
+Good lord, I have basically no idea.
+
+The test input files are retrieved from sterimol, as referenced above. These are made available under the CC-BY license.
+
+The original Fortran code - who knows? It was never released online because it predated the internet and the notion of open source altogether. I'm going to include it in this repository and use it to my heart's content, no modifications. As far as the license for this code - `py2sterimol` is licensed under the MIT license.
+
+## sterimolarchive
+All of the relevant source code files, tutorial documents, and whatever else I can find are included in the `sterimolarchive` directory.
+
 ## Online Documentation
 [Click here to read the documentation](https://JacksonBurns.github.io/py2sterimol/)
