@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+## py2sterimol additions
+
+# executables, compilation artifacts
+sterimol.obj
+sterimol.exe

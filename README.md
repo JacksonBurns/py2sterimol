@@ -22,6 +22,17 @@ There are two issues which arise that probably make basically no difference to 9
 
 Above all else, it's cool so why not?
 
+## Compiling and Using Sterimol.f
+Buckle up.
+
+Because this file is _super old_ it can be difficult to compile. `gfortran` has not worked at all for me, regardless of specifying the standard, whether it was free or fixed form, etc. the [Intel Fortran Compiler](https://www.intel.com/content/www/us/en/developer/articles/tool/oneapi-standalone-components.html#fortran), however, seems to have no issues with the features and extensions that this program relies on.
+
+It should look something like this: `ifort sterimol.f`
+
+And you can run it like this: `type example.inp | .\sterimol.exe`
+
+For unix-based systems, you need the same basic command for compilation, but then calling is a bit easier and actually follows the original documentation: `sterimol.exe < example.inp`
+
 ## Relevant Links
  - A like minded individual providing [the original code](http://www.ccl.net/cca/software/SOURCES/FORTRAN/STERIMOL/) as a matter of completionism.
  - Jackson and Paton's [sterimol](https://github.com/ipendlet/Sterimol), the first attempt at implementing sterimol in Python which conveniently includes some input files from which to infer the usage rules.
