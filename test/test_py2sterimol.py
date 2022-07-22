@@ -2,12 +2,12 @@ import os
 import sys
 import unittest
 
-# from blankpythonproject import blankpythonproject
+# from py2sterimol import py2sterimol
 
 
-class Test_blankpythonproject(unittest.TestCase):
+class Test_py2sterimol(unittest.TestCase):
     """
-    Test the various functionalities of blankpythonproject.
+    Test the various functionalities of py2sterimol.
     """
 
     @classmethod

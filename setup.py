@@ -26,12 +26,12 @@ cwd = pathlib.Path(__file__).parent
 README = (cwd / "README.md").read_text()
 
 setup(
-    name="blpyproj",
-    version=get_version("blankpythonproject/__init__.py"),
-    description="Catchy slogan.",
+    name="test pypi_name",
+    version=get_version("py2sterimol/__init__.py"),
+    description="Thin client Python interface to the original Fortran implementation of Sterimol parameters.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/JacksonBurns/blank-python-project",
+    url="https://github.com/JacksonBurns/py2sterimol",
     author="Jackson Burns",
     license="MIT",
     classifiers=["Programming Language :: Python :: 3"],

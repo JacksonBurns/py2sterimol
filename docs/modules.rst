@@ -1,10 +1,10 @@
-blank-python-project
+py2sterimol
 ====================
 
 .. toctree::
    :maxdepth: 4
 
-   blankpythonproject
+   py2sterimol
    setup
    start_project
    test
