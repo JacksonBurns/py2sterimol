@@ -26,9 +26,9 @@ class Test_py2sterimol(unittest.TestCase):
                 for parameter in parameters:
                     with self.subTest(parameter=parameter):
                         self.assertEqual(
-                            results[parameter],
                             answer_lookup[molecule][parameter],
-                            "Value of {} incorrect for {}. Expected {} got {}".format(
+                            results[parameter],
+                            "Value of {} incorrect for {}; expected {} got {}".format(
                                 parameter,
                                 molecule,
                                 answer_lookup[molecule][parameter],
