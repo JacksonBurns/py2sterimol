@@ -4,16 +4,18 @@ import sys
 import re
 from typing import Dict
 
-from py2sterimol.utils.functions import pdb_to_verloop
+from py2sterimol.utils.functions import smiles_and_pdb_to_verloop
 from py2sterimol.utils.strings import result_regex
 
 
 class py2sterimol:
     def __init__(
         self,
+        smiles: str,
         pdb_fpath: str,
         path_to_sterimol: str = 'sterimol.exe',
     ) -> None:
+        self._smiles = smiles
         self._pdb_fpath = pdb_fpath
         self._path_to_sterimol = path_to_sterimol
 
@@ -34,7 +36,7 @@ class py2sterimol:
             'B4': None,
             'B5': None,
         }
-        encoded = pdb_to_verloop(self._pdb_fpath)
+        encoded = smiles_and_pdb_to_verloop(self._smiles, self._pdb_fpath)
 
         # send encoded to stdout, piping
         cat_proc = subprocess.Popen(
