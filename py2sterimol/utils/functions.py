@@ -10,10 +10,27 @@ def pdb_to_verloop(pdb: str) -> str:
 
     Returns:
         str: Verloop-encoded string.
-    """
 
-    return ("\n"
+    Example:    
+
+    (       "\n"
             "1 \n"
             "HC(RC(H,H,H),RC(H,H,H),RC(H,H,H))\n"
             "3\n"
-            "180.0 180.0 180.0 \n\n")
+            "180.0 180.0 180.0 \n\n")    
+    """
+    encoded_string = ""
+    # start with a newline
+    encoded_string += '\n'
+    # output mode - always do 1
+    encoded_string += '1\n'
+    # formula for the molecule
+
+    # number of dihedral (torsion angles) on next line
+
+    # torsion angles
+
+    # two blank lines
+    encoded_string += '\n\n'
+
+    return encoded_string

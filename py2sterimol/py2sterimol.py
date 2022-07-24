@@ -34,52 +34,26 @@ class py2sterimol:
             'B4': None,
             'B5': None,
         }
-        self._write_input()
-        self._call_sterimol(sterimolargs)
-        self._parse_output(results)
-        return results
-
-    def _write_input(self):
         encoded = pdb_to_verloop(self._pdb_fpath)
-        with open('py2sterimol_input.inp', 'w') as file:
-            file.writelines(encoded)
 
-    def _call_sterimol(self, sterimolargs):
-        """Uses subprocess to call sterimol
-
-        Args:
-            sterimolargs (dict): Extra arguments for sterimol behavior.
-        """
-        # find the appropriate command based on the platform
-        if sys.platform == "win32":
-            cmd = 'type'
-        else:
-            cmd = 'cat'
-        # send file to stdout, piping
+        # send encoded to stdout, piping
         cat_proc = subprocess.Popen(
-            [cmd, 'py2sterimol_input.inp'],
+            ['echo', encoded],
             stdout=subprocess.PIPE,
             shell=True,
         )
-        # call sterimol with stdout piped to stdin, save new stdout to file
-        with open("py2sterimol_input.out", 'w') as file:
-            subprocess.run(
-                self._path_to_sterimol,
-                stdin=cat_proc.stdout,
-                stdout=file,
-            )
 
-    def _parse_output(self, results):
-        """Open the output file, retrieve parameters with regex and update results dictionary.
+        # call sterimol with stdout piped to stdin, save new stdout to variable
+        sterimol_proc = subprocess.Popen(
+            self._path_to_sterimol,
+            stdin=cat_proc.stdout,
+            stdout=subprocess.PIPE,
+        )
+        out, _ = sterimol_proc.communicate()
 
-        Args:
-            results (dict): Dictionary with sterimol parameters as keys.
+        # update results dict
+        file_result = re.search(result_regex, out)
+        for param, i in zip(results.keys(), range(1, 7)):
+            results[param] = float(file_result.group(i))
 
-        Returns:
-            dict: Updated results
-        """
-        with open("py2sterimol_input.out", 'r') as file:
-            file_result = re.search(result_regex, file.read())
-            for param, i in zip(results.keys(), range(1, 7)):
-                results[param] = float(file_result.group(i))
         return results
