@@ -134,3 +134,6 @@ dmypy.json
 # executables, compilation artifacts
 sterimol.obj
 sterimol.exe
+
+# py2sterimol input and output
+py2sterimol_input.*

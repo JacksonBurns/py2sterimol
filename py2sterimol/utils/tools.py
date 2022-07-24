@@ -1,11 +1,18 @@
-def smiles_to_verloop(smiles: str) -> str:
+def pdb_to_verloop(pdb: str) -> str:
     """
-    Take a smiles string and return the equivalent Verloop-encoded string.
+    Take a pdb file and return the equivalent Verloop-encoded string.
 
     Args:
-        smiles (str): Input SMILES string
+        pdb (str): Filepath to pdb file
 
     Returns:
         str: Verloop-encoded string.
     """
-    pass
+    return ("\n"
+            "1 \n"
+            "HC(RC(H,H,H),RC(H,H,H),RC(H,H,H))\n"
+            "3\n"
+            "180.0 180.0 180.0 \n\n")
+
+
+result_regex = r"L=  (\d\.\d{2})\n\n  B\(1\) - B\(4\):      (\d\.\d{2})     (\d\.\d{2})     (\d\.\d{2})     (\d\.\d{2})   B\(5\):     (\d\.\d{2})"

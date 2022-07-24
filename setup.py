@@ -27,6 +27,7 @@ README = (cwd / "README.md").read_text()
 
 setup(
     name="py2sterimol",
+    python_requires='>=3.6',
     version=get_version("py2sterimol/__init__.py"),
     description="Thin client Python interface to the original Fortran implementation of Sterimol parameters.",
     long_description=README,
