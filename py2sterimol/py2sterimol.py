@@ -4,10 +4,8 @@ import sys
 import re
 from typing import Dict
 
-from py2sterimol.utils.tools import (
-    pdb_to_verloop,
-    result_regex,
-)
+from py2sterimol.utils.functions import pdb_to_verloop
+from py2sterimol.utils.strings import result_regex
 
 
 class py2sterimol:
