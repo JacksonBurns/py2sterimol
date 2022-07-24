@@ -11,6 +11,7 @@ def pdb_to_verloop(pdb: str) -> str:
     Returns:
         str: Verloop-encoded string.
     """
+
     return ("\n"
             "1 \n"
             "HC(RC(H,H,H),RC(H,H,H),RC(H,H,H))\n"
